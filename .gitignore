@@ -1,0 +1,4 @@
+.vscode/
+node_modules
+biome.json
+package-lock.json
