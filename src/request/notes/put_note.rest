@@ -1,0 +1,7 @@
+PUT  http://localhost:3004/api/notes/66ac00dd644ca4e3daa6e265
+Content-Type: application/json
+
+{
+  "content": "ya me tome mi cafe",
+  "important" : true
+} 
