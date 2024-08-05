@@ -3,3 +3,4 @@ node_modules
 biome.json
 package-lock.json
 .env
+.babelrc
