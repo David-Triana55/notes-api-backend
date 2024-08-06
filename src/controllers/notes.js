@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+*deimport dotenv from "dotenv";
 import express from "express";
 import userExtractor from "../middleware/userExtractor.js";
 import { Note } from "../models/Note.js";
@@ -6,35 +6,6 @@ import { User } from "../models/User.js";
 dotenv.config();
 
 const notesRouter = express.Router();
-
-// Middleware para extraer el usuario
-// const userExtractor = (req, res, next) => {
-// 	const authHeader = req.get("authorization");
-// 	let token = "";
-
-// 	// revisar si el header de autorización existe y comienza con 'Bearer'
-// 	if (authHeader?.toLowerCase().startsWith("bearer")) {
-// 		// Extraer el token del header
-// 		token = authHeader.split(" ")[1];
-// 	}
-// 	if (!token) {
-// 		return res.status(401).json({ error: "Token missing" });
-// 	}
-
-// 	let decodedToken;
-// 	try {
-// 		decodedToken = jwt.verify(token, process.env.SECRET);
-// 	} catch (err) {
-// 		return res.status(401).json({ error: "Token invalid" });
-// 	}
-
-// 	if (!decodedToken.id) {
-// 		return res.status(401).json({ error: "Token invalid" });
-// 	}
-
-// 	req.userId = decodedToken.id;
-// 	next();
-// };
 
 // Obtener todas las notas
 notesRouter.get("/", async (req, res, next) => {
