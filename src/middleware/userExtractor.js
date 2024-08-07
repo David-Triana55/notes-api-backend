@@ -24,8 +24,7 @@ const userExtractor = (req, res, next) => {
 	if (!decodedToken.id) {
 		return res.status(401).json({ error: "Token invalid" });
 	}
-	console.log(req.userId);
- // agregamos a la req una propiedad llamada userId con el ID que nos devuelve el token
+	// agregamos a la req una propiedad llamada userId con el ID que nos devuelve el token
 	req.userId = decodedToken.id;
 
 	next();

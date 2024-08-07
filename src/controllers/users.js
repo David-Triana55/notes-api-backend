@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import express from "express";
 
+import userExtractor from "../middleware/userExtractor.js";
 import { User } from "../models/User.js";
 const usersRouter = express.Router();
 
@@ -25,9 +26,11 @@ usersRouter.post("/", async (req, res) => {
 	}
 });
 
-usersRouter.get("/", async (req, res) => {
-	const users = await User.find({}).populate("notes", {
+usersRouter.get("/", userExtractor, async (req, res) => {
+	const { userId } = req;
+	const users = await User.findById(userId).populate("notes", {
 		content: 1,
+		important: 1,
 		date: 1,
 	});
 	res.json(users);

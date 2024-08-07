@@ -1,4 +1,4 @@
-*deimport dotenv from "dotenv";
+import dotenv from "dotenv";
 import express from "express";
 import userExtractor from "../middleware/userExtractor.js";
 import { Note } from "../models/Note.js";
@@ -41,7 +41,6 @@ notesRouter.get("/:id", async (req, res, next) => {
 notesRouter.post("/", userExtractor, async (req, res, next) => {
 	try {
 		const { userId } = req;
-		console.log(req, "----------------------------------------------------");
 		const { content, important = false } = req.body;
 		const user = await User.findById(userId);
 

@@ -1,7 +1,8 @@
 POST http://localhost:3004/api/notes 
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWMwMDQwMzdkMmU2ZGVlZWY0Yjc5MyIsInVzZXJuYW1lIjoiZmVsaXBlIiwiaWF0IjoxNzIyOTY0ODk5fQ.onbhXLdI_Lz4I9lkdb5EApmDjl9jlrtWCJAbpoU0HkU
 
 {
-  "content": "i want to learn more about react"
+  "content": "i want to learn more about node",
+  "important": true
 }
